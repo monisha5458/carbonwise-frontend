@@ -49,6 +49,8 @@ const CommentsPage = () => {
         comments: [...prev.comments, commentText],
       }));
       setCommentText('');
+      console.log("Post comments:", post.comments);
+
     } catch (error) {
       console.error('Error adding comment:', error);
       setError('Failed to add comment. Please try again.');
@@ -67,13 +69,14 @@ const CommentsPage = () => {
           <div className="bg-white p-4 rounded shadow-lg max-w-4xl mx-auto">
             <h2 className="text-2xl font-semibold mb-4">{post.postTitle}</h2>
             <p className="mb-4">{post.postCaption}</p>
-            {post.imageUrl && (
+            {post?.imageUrl && (
               <img
-                src={`http://localhost:3000/${post.imageUrl}`}
+                src={`http://localhost:3000${post.imageUrl}`}
                 alt={post.postTitle}
                 className="w-full h-64 object-cover mb-4"
               />
             )}
+
             <form onSubmit={handleCommentSubmit} className="mb-4">
               <textarea
                 value={commentText}

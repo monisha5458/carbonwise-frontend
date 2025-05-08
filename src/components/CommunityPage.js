@@ -205,7 +205,7 @@ const CommunityPage = () => {
         </div>
 
         <div className="mt-8">
-          <h2 className="text-2xl font-semibold mb-4">Posts</h2>
+        <h2 className="text-2xl font-semibold mb-4 ml-[173px]">Posts</h2>
           <div className="bg-white p-4 rounded shadow-lg max-w-4xl mx-auto">
             {posts.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -216,7 +216,7 @@ const CommunityPage = () => {
                     {console.log(post.imageUrl)}
                     {post.imageUrl && (
                       <img
-                      src={`http://localhost:3000/uploads/${post.imageUrl}`}
+                      src={`http://localhost:3000${post.imageUrl}`}
                       alt={post.postTitle}
                       className="w-full h-64 object-cover mb-2"
                     />
@@ -225,20 +225,20 @@ const CommunityPage = () => {
                     <div className="flex items-center space-x-4 mt-2">
                       <button
                         onClick={() => handleLike(post._id)}
-                        className="bg-green-500 text-white px-4 py-2 rounded-lg"
+                        className="bg-green-500 text-white px-2 py-1 rounded-lg"
                       >
                         Like ({post.likes})
                       </button>
                       <button
                         onClick={() => handleDeletePost(post._id)}
-                        className="bg-red-500 text-white px-4 py-2 rounded-lg"
-                      >
+                        className="bg-red-500 text-white px-2 py-1 rounded-lg"
+            >
                         Delete
                         </button>
 
                       <button
                         onClick={() => handleViewComments(post._id)}
-                        className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                        className="bg-blue-500 text-white px-2 py-1 rounded-lg"
                       >
                         View Comments
                       </button>

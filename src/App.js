@@ -7,6 +7,8 @@ import CommunityPage from './components/CommunityPage';
 import LocationPage from './components/LocationPage';
 import CommentsPage from './components/CommentsPage'; // Import the new CommentsPage component
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import GetStartedPage from './components/GetStartedPage';
+
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <BrowserRouter>
         <div className="container mx-auto">
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<GetStartedPage />} />
+            {/* <Route path="/" element={<HomePage />} /> */}
+            <Route path="/home" element={<HomePage />} />
             <Route path="/carbontracker" element={<CarbonTracker />} />
             <Route path="/community" element={<CommunityPage />} />
             <Route path="/authpage" element={<AuthPage />} />

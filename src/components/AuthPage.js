@@ -83,8 +83,20 @@ const AuthPage = () => {
   
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
+    // <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+    //   <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
+    //     <h2 className="text-2xl font-semibold mb-4">{isRegistering ? 'Register' : 'Login'}</h2>
+    //     <form onSubmit={handleSubmit}>
+    //       {error && <p className="text-red-500 mb-4">{error}</p>}
+    <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+      {/* EcoTrack Header */}
+      <header className="w-full bg-green-600 text-white py-4 text-center">
+        <h1 className="text-4xl font-bold">EcoTrack </h1>
+        <p className="text-lg">Join EcoTrack – Your Journey to a Greener Tomorrow Starts Here.</p>
+      </header>
+
+      {/* Auth Form */}
+      <div className="bg-white p-8 rounded shadow-lg w-full max-w-md mt-8">
         <h2 className="text-2xl font-semibold mb-4">{isRegistering ? 'Register' : 'Login'}</h2>
         <form onSubmit={handleSubmit}>
           {error && <p className="text-red-500 mb-4">{error}</p>}
